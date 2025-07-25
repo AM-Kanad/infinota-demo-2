@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Output Generator – InFiNota</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    :root {
+      --background: linear-gradient(135deg, #0e0f1a, #1c1e2b);
+      --card: #1f2230;
+      --foreground: #ffffff;
+      --muted: #a1a1aa;
+      --border: #2a2d3a;
+      --accent: #00d4aa;
+      --secondary: #8b5cf6;
+      --radius: 0.75rem;
+      --shadow-card: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+    }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .tab {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius);
+      background-color: #2a2d3a;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .tab.active {
+      background-color: var(--secondary);
+      color: #000;
+    }
+    .preview {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn {
+      background-color: var(--accent);
+      color: var(--background);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 212, 170, 0.3);
+    }
+    .btn:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Output Generator</h2>
+    <div class="tabs">
+      <div class="tab active">Legal</div>
+      <div class="tab">Sales</div>
+      <div class="tab">Technical</div>
+    </div>
+    <div class="preview">
+      <h3>Term Sheet Preview</h3>
+      <p><strong>Underlying:</strong> EURO STOXX 50</p>
+      <p><strong>Tenor:</strong> 36 months</p>
+      <p><strong>Barrier:</strong> 70%</p>
+      <p><strong>Coupon:</strong> 6.5%</p>
+      <p><strong>Jurisdiction:</strong> Germany</p>
+      <p>This product pays a fixed coupon and is protected unless the underlying breaches a barrier. Legal disclosures and technical logic are shown per tab.</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="confirmation.html">Publish PDF</a>
+      <button class="btn">Push to API</button>
+      <button class="btn">Copy Share Link</button>
+    </div>
+  </div>
+</body>
+</html>
