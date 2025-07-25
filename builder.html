@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InFiNota - Product Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(220 18% 10%)',
+                        foreground: 'hsl(210 40% 98%)',
+                        card: 'hsl(220 18% 12%)',
+                        'card-foreground': 'hsl(210 40% 98%)',
+                        primary: 'hsl(171 100% 41%)',
+                        'primary-foreground': 'hsl(220 18% 10%)',
+                        muted: 'hsl(220 15% 25%)',
+                        'muted-foreground': 'hsl(220 13% 65%)',
+                        border: 'hsl(220 15% 20%)',
+                        input: 'hsl(220 15% 16%)',
+                        ring: 'hsl(171 100% 41%)',
+                        'fintech-warning': 'hsl(38 92% 50%)',
+                        'fintech-gradient-start': 'hsl(262 83% 58%)',
+                        'fintech-gradient-end': 'hsl(262 90% 70%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+    <!-- Header -->
+    <header class="border-b border-border bg-card/50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center gap-4">
+                <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-muted hover:text-muted-foreground h-9 px-3">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                    Back to Dashboard
+                </button>
+                <div>
+                    <h1 class="text-2xl font-bold text-foreground">Product Builder</h1>
+                    <p class="text-muted-foreground">Configure your structured product</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Panel - Form -->
+            <div class="space-y-6">
+                <div class="rounded-lg border border-border/50 bg-card text-card-foreground shadow-sm">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <h3 class="flex items-center gap-2 text-2xl font-semibold leading-none tracking-tight">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                            Product Configuration
+                        </h3>
+                    </div>
+                    <div class="p-6 pt-0 space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Underlying Asset</label>
+                            <select class="flex h-10 w-full rounded-md border border-border/50 bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                <option value="">Select underlying asset</option>
+                                <option value="sp500">S&P 500 Index</option>
+                                <option value="sp500esg">S&P 500 ESG Index</option>
+                                <option value="eurostoxx50">EURO STOXX 50</option>
+                                <option value="bitcoin">Bitcoin</option>
+                                <option value="ethereum">Ethereum</option>
+                                <option value="gold">Gold Futures</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Tenor (months)</label>
+                            <input type="number" placeholder="12" class="flex h-10 w-full rounded-md border border-border/50 bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Barrier Level (%)</label>
+                            <input type="number" placeholder="75" class="flex h-10 w-full rounded-md border border-border/50 bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Coupon (%)</label>
+                            <input type="number" step="0.1" placeholder="8.5" class="flex h-10 w-full rounded-md border border-border/50 bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Jurisdiction</label>
+                            <select class="flex h-10 w-full rounded-md border border-border/50 bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                <option value="">Select jurisdiction</option>
+                                <option value="us">United States</option>
+                                <option value="eu">European Union</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="ch">Switzerland</option>
+                                <option value="sg">Singapore</option>
+                            </select>
+                        </div>
+
+                        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 w-full">
+                            <i data-lucide="shield" class="w-4 h-4 mr-2"></i>
+                            Run Compliance Check
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Preview -->
+            <div class="space-y-6">
+                <div class="rounded-lg border border-border/50 bg-card text-card-foreground shadow-sm">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-semibold leading-none tracking-tight">Term Sheet Preview</h3>
+                            <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border bg-background hover:bg-muted hover:text-muted-foreground h-9 px-3">
+                                <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="space-y-4 text-sm">
+                            <div class="border-b border-border/30 pb-4">
+                                <h3 class="font-semibold text-base mb-3">Product Summary</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Product Type:</span>
+                                        <span>Barrier Note</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Underlying:</span>
+                                        <span>Not selected</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Tenor:</span>
+                                        <span>Not set</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-b border-border/30 pb-4">
+                                <h3 class="font-semibold text-base mb-3">Terms</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Barrier Level:</span>
+                                        <span class="text-muted-foreground">Not set</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Coupon Rate:</span>
+                                        <span class="text-muted-foreground">Not set</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Jurisdiction:</span>
+                                        <span>Not selected</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold text-base mb-3">Risk Profile</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Capital Protection:</span>
+                                        <span style="color: hsl(38 92% 50%)">Conditional</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-muted-foreground">Complexity:</span>
+                                        <span>Moderate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="rounded-lg border border-border/50 bg-card text-card-foreground shadow-sm" style="background: linear-gradient(to bottom right, hsl(262 83% 58% / 0.1), hsl(262 90% 70% / 0.1));">
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-4">Expected Performance</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-primary">—</p>
+                                <p class="text-sm text-muted-foreground">Annual Yield</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold" style="color: hsl(38 92% 50%)">—</p>
+                                <p class="text-sm text-muted-foreground">Max Downside</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
