@@ -203,7 +203,6 @@ const Compliance = () => {
           <Button 
             onClick={() => navigate("/output")}
             className="bg-primary hover:bg-primary/90"
-            disabled={complianceChecks.some(check => check.status === "failed")}
           >
             <FileCheck className="w-4 h-4 mr-2" />
             Approve Product
