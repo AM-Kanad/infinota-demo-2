@@ -8,35 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* InFiNota Dark Theme - Navy & Teal Design System */
+    --background: 225 15% 11%;           /* #1a1b23 - Primary navy */
+    --foreground: 210 40% 95%;           /* Light text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 225 15% 16%;                 /* #2a2d3a - Card navy */
+    --card-foreground: 210 40% 95%;      /* Light text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 225 15% 16%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 174 100% 42%;             /* #00d4aa - Teal primary */
+    --primary-foreground: 225 15% 11%;   /* Dark text on teal */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 225 15% 20%;            /* Lighter navy */
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 225 15% 20%;                /* Muted navy */
+    --muted-foreground: 215 15% 65%;     /* Muted text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 174 100% 42%;              /* Teal accent */
+    --accent-foreground: 225 15% 11%;    /* Dark text on accent */
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 225 15% 25%;               /* Subtle borders */
+    --input: 225 15% 20%;                /* Input background */
+    --ring: 174 100% 42%;                /* Teal focus ring */
 
-    --radius: 0.5rem;
+    /* Custom InFiNota tokens */
+    --fintech-gradient-start: 243 75% 59%;   /* #6366f1 - Purple start */
+    --fintech-gradient-end: 262 83% 58%;     /* #8b5cf6 - Purple end */
+    --fintech-success: 142 76% 36%;          /* Success green */
+    --fintech-warning: 38 92% 50%;           /* Warning amber */
+    --fintech-navy-light: 225 15% 25%;      /* Light navy variant */
+    --fintech-navy-dark: 225 15% 8%;        /* Dark navy variant */
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 

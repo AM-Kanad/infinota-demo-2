@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// InFiNota fintech colors
+				fintech: {
+					'gradient-start': 'hsl(var(--fintech-gradient-start))',
+					'gradient-end': 'hsl(var(--fintech-gradient-end))',
+					success: 'hsl(var(--fintech-success))',
+					warning: 'hsl(var(--fintech-warning))',
+					'navy-light': 'hsl(var(--fintech-navy-light))',
+					'navy-dark': 'hsl(var(--fintech-navy-dark))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
